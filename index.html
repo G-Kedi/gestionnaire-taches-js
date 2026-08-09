@@ -13,52 +13,169 @@
 <body>
     <header>
         <nav class="navbar">
-            <!-- logo -->
-            <a href="#" class="logo">Task Manager</a>
+            <a href="#" class="logo">TaskFlow</a>
 
-            <!-- Bouton Humberger -->
+            <!------- Bouton hamburger ------->
             <input type="checkbox" id="menu-toggle">
-
-            <!-- Icône hamburger -->
-            <label for="menu-toggle" class="hamburger">
+            <label for="menu-toggle" class="hamburger" aria-label="Ouvrir le menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <!-- Menu -->
+            <!------- Navigation ----->
             <ul class="nav-links">
                 <li class="center">
-                    <span class="material-symbols-outlined">
-                        home
-                    </span>
+                    <span class="material-symbols-outlined">home</span>
                     <a href="#">Accueil</a>
                 </li>
                 <li class="center">
-                    <span class="material-symbols-outlined">
-                        dashboard
-                    </span>
-                    <a href="">Dashboard</a>
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <a href="#">Dashboard</a>
                 </li>
                 <li class="center">
-                    <span class="material-symbols-outlined">
-                        checklist
-                    </span>
+                    <span class="material-symbols-outlined">checklist</span>
                     <a href="#">Tâches</a>
-                </li class="center">
+                </li>
             </ul>
 
+            <!------- Informations utilisateur ----->
             <div class="user-infos center">
                 <span class="username">username</span>
-                <a href="#">
-                    <span class="material-symbols-outlined user-profile">
-                        person
-                    </span>
+                <a href="#" aria-label="Profil utilisateur">
+                    <span class="material-symbols-outlined user-profile">person</span>
                 </a>
-
             </div>
         </nav>
     </header>
+    <main>
+        <section class="dashboard">
+            <h1>Tableau de bord</h1>
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h2>Toutes les tâches</h2>
+                    <div class="subcard">
+                        <span class="material-symbols-outlined">bar_chart</span>
+                        <strong>189</strong>
+                        <p>Tâches</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Tâches terminées</h2>
+                    <div class="subcard">
+                        <span class="material-symbols-outlined">task_alt</span>
+                        <strong>18</strong>
+                        <p>Tâches</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Taux de complétion</h2>
+                    <div class="subcard">
+                        <span class="material-symbols-outlined">percent</span>
+                        <strong>40</strong>
+                        <p>%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tasks-section">
+
+            <div class="tasks-header">
+                <div>
+                    <span class="section-label">Organisation</span>
+                    <h2>Mes tâches</h2>
+                </div>
+
+                <div class="tasks-filters">
+                    <button class="filter-button active" type="button">Toutes</button>
+                    <button class="filter-button" type="button">En cours</button>
+                    <button class="filter-button" type="button">Terminées</button>
+                </div>
+            </div>
+
+            <div class="tasks-list">
+
+                <article class="task-item">
+                    <div class="task-content">
+                        <div class="task-check">
+                            <input type="checkbox" id="task-1">
+                            <label for="task-1"></label>
+                        </div>
+
+                        <div class="task-info">
+                            <h3>Créer la structure HTML</h3>
+                            <span>Projet gestionnaire de tâches</span>
+                        </div>
+                    </div>
+
+                    <div class="task-actions">
+                        <span class="task-priority priority-high">Haute</span>
+
+                        <button class="task-delete" type="button" aria-label="Supprimer la tâche">
+                            Supprimer
+                        </button>
+                    </div>
+                </article>
+
+                <article class="task-item">
+                    <div class="task-content">
+                        <div class="task-check">
+                            <input type="checkbox" id="task-2" checked>
+                            <label for="task-2"></label>
+                        </div>
+
+                        <div class="task-info">
+                            <h3>Créer le tableau de bord</h3>
+                            <span>Statistiques et indicateurs</span>
+                        </div>
+                    </div>
+
+                    <div class="task-actions">
+                        <span class="task-priority priority-medium">Moyenne</span>
+
+                        <button class="task-delete" type="button" aria-label="Supprimer la tâche">
+                            Supprimer
+                        </button>
+                    </div>
+                </article>
+
+                <article class="task-item">
+                    <div class="task-content">
+                        <div class="task-check">
+                            <input type="checkbox" id="task-3">
+                            <label for="task-3"></label>
+                        </div>
+
+                        <div class="task-info">
+                            <h3>Ajouter les filtres</h3>
+                            <span>Filtrer les tâches par statut</span>
+                        </div>
+                    </div>
+
+                    <div class="task-actions">
+                        <span class="task-priority priority-low">Basse</span>
+
+                        <button class="task-delete" type="button" aria-label="Supprimer la tâche">
+                            Supprimer
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="completion-progress">
+                <div class="progress-header">
+                    <span>Progression</span>
+                    <span class="progress-value">33%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+        </section>
+    </main>
 </body>
 
 </html>
