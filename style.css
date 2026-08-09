@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    /* Couleurs de l'interface */
+    --background: #E2E8F0;
+    --surface: #FFFFFF;
+    --primary: #020062;
+    --secondary: #2563EB;
+    --accent: #0025AE;
+
+    /* Couleurs des textes */
+    --text-primary: #111111;
+    --text-secondary: #555555;
+
+    /* Couleurs des priorités */
+    --priority-high: #DC2626;
+    --priority-medium: #F59E0B;
+    --priority-low: #16A34A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--background);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 70px;
+    background-color: var(--surface);
+    box-shadow: 1px 1px 10px #00000025;
+    z-index: 2;
+    position: relative;
+}
+
+#menu-toggle {
+    display: none;
+
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    margin: 5px 0;
+    background-color: var(--text-primary);
+    border-radius: 1rem;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+#menu-toggle:checked+.hamburger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#menu-toggle:checked+.hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked+.hamburger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease;
+    ;
+}
+
+.nav-links li {
+    position: relative;
+    transition: .5s all ease-in-out;
+}
+
+.nav-links li::after {
+    content: "";
+    background-color: var(--priority-medium);
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    height: 2px;
+    width: 0%;
+    transition: .2s all ease-in-out;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+.nav-links li:hover .material-symbols-outlined {
+    color: var(--primary);
+}
+
+.nav-links li a {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links .material-symbols-outlined {
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.user-infos {
+    gap: 1rem;
+}
+
+.username {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.user-profile {
+    box-shadow: #0000003d 1px 1px 5px;
+    border-radius: 50%;
+    padding: .5rem;
+    color: var(--text-secondary);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Gloock", serif;
+    color: var(--primary);
+    display: block;
+    font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        height: 60vh;
+        background-color: var(--surface);
+        width: 100%;
+        top: 71px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 40%;
+        gap: 1rem;
+        z-index: 1;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.1rem;
+    }
+
+    .user-infos {
+        margin-right: 60px;
+    }
+
+    .user-profile {
+        border-radius: 50%;
+        padding: .3rem;
+    }
+
+    .username {
+        font-size: .875rem;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 2rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    #menu-toggle:checked~.nav-links {
+        max-height: 60vh;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 587px){
+    .navbar{
+        padding: 0 1rem;
+    }
+    .nav-links{
+        padding: 0 38%;
+    }
+
+    .logo{
+        font-size:.9rem;
+    }
+
+    .user-infos{
+        margin-right: 40px;
+        gap:.5rem;
+    }
+    .hamburger{
+        right: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 325px){
+    .username{
+        display:none;
+    }
+}
