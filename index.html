@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire des tâches</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">TaskFlow</a>
+
+            <!------- Bouton hamburger ------->
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!------- Navigation ----->
+            <ul class="nav-links">
+                <li class="center">
+                    <span class="material-symbols-outlined">home</span>
+                    <a href="#">Accueil</a>
+                </li>
+                <li class="center">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li class="center">
+                    <span class="material-symbols-outlined">checklist</span>
+                    <a href="#">Tâches</a>
+                </li>
+            </ul>
+
+            <!------- Informations utilisateur ----->
+            <div class="user-infos center">
+                <span class="username">username</span>
+                <a href="#" aria-label="Profil utilisateur">
+                    <span class="material-symbols-outlined user-profile">person</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="dashboard">
+            <h1>Tableau de bord</h1>
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h2>Toutes les tâches</h2>
+                    <div class="subcard">
+                        <span class="material-symbols-outlined">bar_chart</span>
+                        <strong>8</strong>
+                        <p>Tâches</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Tâches terminées</h2>
+                    <div class="subcard">
+                        <span class="material-symbols-outlined">task_alt</span>
+                        <strong>4</strong>
+                        <p>Tâches</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Taux de complétion</h2>
+                    <div class="subcard">
+                        <span class="material-symbols-outlined">percent</span>
+                        <strong>50</strong>
+                        <p>taux de complétion</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tasks-section">
+
+            <div class="tasks-header">
+                <div>
+                    <span class="section-label">Organisation</span>
+                    <h2>Mes tâches</h2>
+                </div>
+
+                <div class="tasks-filters">
+                    <button class="filter-button active" type="button">Toutes</button>
+                    <button class="filter-button" type="button">En cours</button>
+                    <button class="filter-button" type="button">Terminées</button>
+                </div>
+            </div>
+
+            <div class="tasks-list" id="tasks_list">
+
+
+
+            </div>
+
+            <div class="completion-progress">
+                <div class="progress-header">
+                    <span>Progression</span>
+                    <span class="progress-value">33%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script src="taches.js"></script>
+</body>
+
+</html>
